@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме Осинцев Данил Алексеевич</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #f5f7fa;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .header {
+            background: linear-gradient(to right, var(--primary-color), #6b8cbc);
+            color: white;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-img img {
+            width: 120px;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+
+        .profile-info h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .profile-info p {
+            opacity: 0.9;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .left-column,
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--primary-color);
+            margin-top: 5px;
+        }
+
+        .contact-list a {
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+
+        .contact-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-list li {
+            background: var(--secondary-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .education-item,
+        .job-item {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 15px;
+        }
+
+        .job-item ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .job-item li {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="resume-container">
+
+        <header class="header">
+            <div class="profile-img">
+                <img src="./Резюме/studentPhoto.jpeg"
+                    alt="Фото профиля" />
+            </div>
+            <div class="profile-info">
+                <h1 class="name">Осинцев Данил Алексеевич</h1>
+                <p class="title">Программист</p>
+                <p class="location">Ирбит, Россия</p>
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="left-column">
+                <section class="section">
+                    <h2>Контакты</h2>
+                    <ul class="contact-list">
+                        <li><a href="mailto:ivan@example.com">danil.assassins@gmail.com</a></li>
+                        <li><a href="tel:+79123456789">+7 (901) 971-36-03</a></li>
+                        <li><a href="https://github.com/DanilNTP" target="_blank">GitHub</a></li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h2>Навыки</h2>
+                    <ul class="skills-list">
+                        <li>HTML5 / CSS3</li>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                        <li>UI/UX</li>
+                        <li>Программирование в среде 1С 8.3</li>
+                        <li>Администрирование, сопровождение и доработка конфигурации 1С: ЗУП 3.1</li>
+                        <li>Консультирование и поддержка пользователей</li>
+                        <li>Microfost Word</li>
+                        <li>Microfost Excel</li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h2>Образование</h2>
+                    <div class="education-item">
+                        <h3>Ирбитский политехникум</h3>
+                        <p>Техник-программист</p>
+                        <time>2019 – 2023</time>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-column">
+                <section class="section">
+                    <h2>О себе</h2>
+                    <p class="">
+                        Технически подкованный специалист с профильным образованием в области программирования.
+                        Имею опыт разработки динамических веб-сайтов с использованием PHP, MySQL, HTML, CSS и
+                        JavaScript,
+                        а также навыки работы с системами управления базами данных и UI/UX-дизайном.
+                        Специализируюсь на сопровождении, администрировании и доработке конфигураций 1С,
+                        а также оказываю консультационную поддержку пользователям.
+                        В настоящее время продолжаю обучение в Уральском государственном экономическом университете
+                        (УРГЭУ) на втором курсе
+                        по направлению "Информатика и вычислительная техника".
+                        Стремлюсь к профессиональному росту и освоению новых технологий.
+                    </p>
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2>Опыт работы</h2>
+                    <div class="job-item">
+                        <h3>Программист 1С</h3>
+                        <p>АО "Ирбитский химико-фармацевтический завод"</p>
+                        <ul>
+                            <li>Доработка и адаптация программных решений 1С</li>
+                            <li>Адинистирование типовых конфигураций 1С</li>
+                            <li>Консультирование и поддержка пользователей</li>
+                        </ul>
+                    </div>
+                    <div class="job-item">
+                        <h3>Системный администратор</h3>
+                        <p>АО "Ирбитский химико-фармацевтический завод"</p>
+                        <ul>
+                            <li>Администрирование и техническая поддержка корпоративной IT-инфраструктуры.</li>
+                            <li>Консультирование и помощь пользователям в решении технических вопросов.</li>
+                            <li>Техническое обслуживание принтеров (МФУ)</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="section">
+                    <h2>Дополнительное образование (удостоверения)</h2>
+                    <div class="job-item">
+                        <ul>
+                            <li>Оператор электронно-вычислительных машин 3-го разряда</li>
+                            <li>Основы «1С администрирования»</li>
+                            <li>Кадровый учет в программе «1С:Зарплата и управление персоналом»</li>
+                            <li>Рассчитываем зарплату в программе «1С:Зарплата и управление персоналом». Редакция 3.1
+                            </li>
+                            <li>Интенсивное обучение программированию в 1С</li>
+                            <li>Курс SQL Academy</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Резюме загружено");
+        });
+    </script>
+</body>
+
+</html>
