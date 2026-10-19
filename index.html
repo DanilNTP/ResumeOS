@@ -31,12 +31,26 @@
         }
 
         .resume-container {
-            max-width: 1000px;
+            max-width: 1500px;
             margin: auto;
             background: white;
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
+        }
+        ul {
+            list-style-type: "-";
+        }
+        ul li{
+            padding-left: 5px;
+        }
+        .text{
+            border-left: 3px solid var(--primary-color);
+            padding-left: 15px;
+        }
+        .skills-list{
+            border-left: 3px solid var(--primary-color);
+            padding-left: 15px;  
         }
 
         .header {
@@ -68,7 +82,7 @@
         .content {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 20px;
+            gap: 30px;
             padding: 30px;
         }
 
@@ -86,14 +100,6 @@
             position: relative;
         }
 
-        .section h2::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 3px;
-            background: var(--primary-color);
-            margin-top: 5px;
-        }
 
         .contact-list a {
             text-decoration: none;
@@ -134,6 +140,122 @@
         .job-item li {
             margin-bottom: 5px;
         }
+                /* --- Стили для блока Проекты --- */
+        .projects-section {
+            padding: 20px;
+            margin-top: 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #334155;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 24px;
+            margin-left: 10px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        /* Сетка карточек */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        /* Карточка проекта */
+        .project-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f1f5f9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Контейнер для изображения */
+        .project-image {
+            width: 100%;
+            overflow: hidden;
+            background-color: #f8fafc;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05); /* Легкий зум картинки при наведении */
+        }
+
+        /* Контент карточки */
+        .project-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0 0 12px 0;
+            line-height: 1.4;
+        }
+
+        /* Теги технологий */
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            background-color: #f1f5f9;
+            color: #475569;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .project-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #64748b;
+            margin: 0 0 20px 0;
+            flex-grow: 1;
+        }
+
+        /* Ссылка */
+        .project-link {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            margin-top: auto; /* Прижимает ссылку к низу карточки */
+        }
+
+        .project-link:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
 
         @media (max-width: 768px) {
             .content {
@@ -162,15 +284,14 @@
                 <p class="location">Ирбит, Россия</p>
             </div>
         </header>
-
         <section class="content">
             <div class="left-column">
                 <section class="section">
                     <h2>Контакты</h2>
                     <ul class="contact-list">
-                        <li><a href="mailto:ivan@example.com">danil.assassins@gmail.com</a></li>
-                        <li><a href="tel:+79123456789">+7 (901) 971-36-03</a></li>
-                        <li><a href="https://github.com/DanilNTP" target="_blank">GitHub</a></li>
+                        <li>Почта: <a href="mailto:ivan@example.com">danil.assassins@gmail.com</a></li>
+                        <li>Телефон: <a href="tel:+79123456789">+7 (901) 971-36-03</a></li>
+                        <li>Мой репозиторий: <a href="https://github.com/DanilNTP" target="_blank">GitHub</a></li>
                     </ul>
                 </section>
 
@@ -202,7 +323,7 @@
             <div class="right-column">
                 <section class="section">
                     <h2>О себе</h2>
-                    <p class="">
+                    <p class="text">
                         Технически подкованный специалист с профильным образованием в области программирования.
                         Имею опыт разработки динамических веб-сайтов с использованием PHP, MySQL, HTML, CSS и
                         JavaScript,
@@ -254,8 +375,66 @@
                 </section>
             </div>
         </section>
-    </main>
+        <section class="projects-section">
+            <h2 class="section-title">Проекты</h2>
+            
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image">
+                        <!-- Заглушка для изображения. Замените src на реальную ссылку, когда будут скриншоты -->
+                        <img src="./Резюме/Cookies.png" alt="Превью веб-приложения">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">SPA приложение "Cookies"</h3>
+                        <div class="project-tags">
+                            <span class="tag">Angular</span>
+                            <span class="tag">HTML5/CSS3</span>
+                            <span class="tag">JS</span>
+                        </div>
+                        <p class="project-description">
+                             Разработка адаптивного лендинга с каталогом продукции. Реализована фильтрация товаров, mobile-first верстка (CSS Grid, Flexbox, CSS-переменные) с упором на семантическую структуру, кроссбраузерную совместимость и доступность интерфейса (a11y).
+                        </p>
+                        <a href="https://danilntp.github.io/cookies/" target="_blank" class="project-link">
+                            Смотреть на GitHub →
+                        </a>
+                    </div>
+                </article>
 
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="./Резюме/ЗУП.png" alt="Превью автоматизации 1С">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Автоматизация отчетности в 1С:ЗУП 3.1</h3>
+                        <div class="project-tags">
+                            <span class="tag">1С 8.3</span>
+                            <span class="tag">Встроенный язык 1С</span>
+                        </div>
+                        <p class="project-description">
+                            Создание внешних обработок и кастомных отчетов для упрощения расчета зарплаты и формирования кадровых документов. Сокращение времени на рутинные операции HR.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="./Резюме/figma.png" alt="Превью UI/UX дизайна">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">UI/UX Дизайн платформы «Warplaycloud»</h3>
+                        <div class="project-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Адаптивная верстка</span>
+                        </div>
+                        <p class="project-description">
+                           Проектирование пользовательского интерфейса и логики взаимодействия для облачной платформы. Разработана масштабируемая дизайн-система с использованием компонентов и Auto Layout, созданы интерактивные прототипы пользовательских сценариев с упором на интуитивную навигацию и адаптивность под разные устройства.
+                        </p>
+                    </div>
+                </article>
+            </div>
+</section>
+    </main>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             console.log("Резюме загружено");
